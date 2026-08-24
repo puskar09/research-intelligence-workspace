@@ -1,23 +1,25 @@
+"""
+Research Intelligence Workspace — FastAPI backend entry point.
+
+Run with:
+    uvicorn backend.main:app --reload
+"""
+
 from fastapi import FastAPI
-from pydantic import BaseModel
 
-from backend.services.source_collector import SourceCollector
+from backend.api.sources import router as sources_router
 
-app = FastAPI()
+app = FastAPI(
+    title="Research Intelligence Workspace",
+    description="Backend API for the Research Intelligence Workspace pipeline.",
+    version="0.1.0",
+)
 
-collector = SourceCollector()
+# --- Routers ---
+app.include_router(sources_router, prefix="/api/sources", tags=["sources"])
 
 
-class SourceRequest(BaseModel):
-    url: str
-
-
-@app.get("/health")
-def health_check():
+# --- Health ---
+@app.get("/health", tags=["health"], summary="Health check")
+def health_check() -> dict[str, str]:
     return {"status": "ok"}
-
-
-@app.post("/sources")
-def collect_source(request: SourceRequest):
-    source = collector.collect(request.url)
-    return source

@@ -92,3 +92,29 @@ Example:
 ```text
 POST /research
 ```
+
+
+## Phase 1 — Web Acquisition
+
+Learned how a Python application can acquire publicly accessible web content through HTTP, parse HTML, extract useful information, clean basic noise, and represent the result as a structured Source.
+
+### Key concepts
+
+- HTTP acquisition
+- HTML structure
+- HTML parsing
+- Text extraction
+- Metadata and links
+- Basic content cleaning
+- Source provenance
+- Pydantic data models
+- Reusable service components
+- FastAPI integration
+
+### Engineering takeaway
+
+Web acquisition is a data-ingestion problem. The goal is not to understand every detail of web development, but to reliably turn an external resource into structured information that downstream systems can work with.
+
+### Current limitation
+
+The V1 collector uses simple HTML extraction and is not designed to reliably handle every website, especially dynamically rendered pages. More sophisticated acquisition can be added later when required.
