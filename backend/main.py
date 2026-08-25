@@ -6,6 +6,8 @@ Run with:
 
 Phase 3: search router mounted at /api/search.
          Embedding model dimension is verified against DB schema at startup.
+Phase 4: RAG router mounted at /api/rag.
+         Requires GOOGLE_API_KEY in .env.
 """
 
 import logging
@@ -13,6 +15,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
+from backend.api.rag import router as rag_router
 from backend.api.search import router as search_router
 from backend.api.sources import router as sources_router
 from backend.db.init_db import init_db
@@ -48,13 +51,14 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="Research Intelligence Workspace",
     description="Backend API for the Research Intelligence Workspace pipeline.",
-    version="0.3.0",
+    version="0.4.0",
     lifespan=lifespan,
 )
 
 # --- Routers ---
 app.include_router(sources_router, prefix="/api/sources", tags=["sources"])
 app.include_router(search_router, prefix="/api/search", tags=["search"])
+app.include_router(rag_router, prefix="/api/rag", tags=["rag"])
 
 
 # --- Health ---

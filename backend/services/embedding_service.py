@@ -80,3 +80,40 @@ def embed_texts(texts: list[str], batch_size: int = 64) -> list[list[float]]:
         show_progress_bar=False,
     )
     return [v.tolist() for v in vectors]
+
+
+class EmbeddingService:
+    """
+    Class-based façade over the module-level embedding functions.
+
+    Provides the same interface via instance methods so callers can
+    dependency-inject or subclass the service if needed.
+
+    The underlying singleton model is shared with the module-level
+    functions — calling either form does not reload the model.
+    """
+
+    @staticmethod
+    def embed_text(text: str) -> list[float]:
+        """Embed a single string. Returns a list[float] of length 384."""
+        return embed_text(text)
+
+    @staticmethod
+    def embed_texts(texts: list[str], batch_size: int = 64) -> list[list[float]]:
+        """Embed a list of strings in batches. Returns list[list[float]]."""
+        return embed_texts(texts, batch_size=batch_size)
+
+    @staticmethod
+    def embedding_dimension() -> int:
+        """Return the dimension of the embedding vectors (384 for all-MiniLM-L6-v2)."""
+        return embedding_dimension()
+
+    @property
+    def model_name(self) -> str:
+        """Name of the underlying sentence-transformers model."""
+        return MODEL_NAME
+
+    @property
+    def dim(self) -> int:
+        """Embedding dimension — convenience alias for embedding_dimension()."""
+        return embedding_dimension()
