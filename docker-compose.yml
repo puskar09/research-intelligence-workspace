@@ -1,0 +1,32 @@
+# Research Intelligence Workspace — Docker Compose
+#
+# Runs PostgreSQL 16 with the pgvector extension.
+# FastAPI runs locally (not containerised yet).
+#
+# Usage:
+#   docker compose up -d        # start in background
+#   docker compose down         # stop (keeps volume)
+#   docker compose down -v      # stop AND delete volume
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: riw_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-riw}
+      POSTGRES_USER: ${POSTGRES_USER:-riw_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-riw_password}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - riw_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-riw_user} -d ${POSTGRES_DB:-riw}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  riw_pgdata:
+    driver: local

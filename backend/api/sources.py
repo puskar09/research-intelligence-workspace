@@ -1,30 +1,44 @@
 """
-POST /api/sources/pdf  — ingest an uploaded PDF file
-POST /api/sources/url  — ingest a web page by URL
+POST /api/sources/pdf  — ingest an uploaded PDF file and persist to PostgreSQL
+POST /api/sources/url  — ingest a web page by URL and persist to PostgreSQL
 
 Both endpoints return the same structured response:
   {
     "source":   Source,
-    "document": DocumentSummary,   # pages omitted to keep response compact
+    "document": DocumentSummary,
     "chunks":   list[Chunk],
     "stats":    ChunkStats
   }
+
+Phase 3 change:
+  After the primary persistence transaction commits, a second "post-ingestion
+  embedding enrichment" step embeds all chunks and updates their embedding
+  column. This is intentionally a separate transaction so that if embedding
+  fails, the ingested data is already safe and can be backfilled via script.
+  The API response shape is unchanged from Phase 2.
 """
 
+import logging
 import os
 import tempfile
 from datetime import datetime
 
-from fastapi import APIRouter, File, HTTPException, UploadFile
-from fastapi.responses import JSONResponse
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 from pydantic import BaseModel, field_validator
+from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.orm import Session
 
+from backend.db.database import get_db
 from backend.models.chunk import Chunk
 from backend.models.document import Document
 from backend.models.source import Source
+from backend.repositories.ingestion_repo import save_chunk_embeddings, save_ingestion
 from backend.services.chunker import Chunker
 from backend.services.document_ingestion import DocumentIngestion, DocumentIngestionError
+from backend.services.embedding_service import embed_texts
 from backend.services.source_collector import SourceCollector, SourceCollectionError
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
@@ -64,6 +78,7 @@ class ChunkStats(BaseModel):
     total_chunks: int
     chunk_size: int
     overlap: int
+    chunks_embedded: int
 
 
 class IngestionResponse(BaseModel):
@@ -77,7 +92,12 @@ class IngestionResponse(BaseModel):
 # Helpers
 # ---------------------------------------------------------------------------
 
-def _build_response(source: Source, document: Document, chunks: list[Chunk]) -> IngestionResponse:
+def _build_response(
+    source: Source,
+    document: Document,
+    chunks: list[Chunk],
+    chunks_embedded: int,
+) -> IngestionResponse:
     return IngestionResponse(
         source=source,
         document=DocumentSummary(
@@ -94,8 +114,61 @@ def _build_response(source: Source, document: Document, chunks: list[Chunk]) -> 
             total_chunks=len(chunks),
             chunk_size=_chunker.chunk_size,
             overlap=_chunker.overlap,
+            chunks_embedded=chunks_embedded,
         ),
     )
+
+
+def _persist_ingestion(
+    db: Session,
+    source: Source,
+    document: Document,
+    chunks: list[Chunk],
+) -> None:
+    """Transaction A — persist source/document/pages/chunks (no embeddings)."""
+    try:
+        save_ingestion(db, source, document, chunks)
+        db.commit()
+        logger.info("Persisted source=%s to database.", source.id)
+    except SQLAlchemyError as exc:
+        db.rollback()
+        logger.exception("DB error persisting source=%s", source.id)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Ingestion succeeded but database persistence failed: {exc}",
+        ) from exc
+
+
+def _enrich_embeddings(
+    db: Session,
+    chunks: list[Chunk],
+) -> int:
+    """
+    Transaction B — post-ingestion embedding enrichment.
+
+    Embeds all chunk texts and stores them. If this step fails, the ingestion
+    data from transaction A is already safe and can be backfilled separately.
+
+    Returns the number of chunks successfully embedded.
+    """
+    if not chunks:
+        return 0
+    try:
+        texts = [c.text for c in chunks]
+        vectors = embed_texts(texts)
+        chunk_id_to_embedding = {c.id: v for c, v in zip(chunks, vectors)}
+        updated = save_chunk_embeddings(db, chunk_id_to_embedding)
+        db.commit()
+        logger.info("Embedded %d chunks for ingestion.", updated)
+        return updated
+    except Exception as exc:  # noqa: BLE001
+        db.rollback()
+        # Log but do NOT raise — data is already persisted; backfill can fix this.
+        logger.error(
+            "Post-ingestion embedding enrichment failed (data is safe, run backfill): %s",
+            exc,
+        )
+        return 0
 
 
 # ---------------------------------------------------------------------------
@@ -106,14 +179,16 @@ def _build_response(source: Source, document: Document, chunks: list[Chunk]) -> 
     "/pdf",
     response_model=IngestionResponse,
     summary="Ingest a PDF file",
-    description="Upload a PDF. Returns extracted pages chunked into searchable text segments.",
+    description=(
+        "Upload a PDF. Extracts text page-by-page, chunks each page independently, "
+        "persists to PostgreSQL (transaction A), then embeds chunks (transaction B). "
+        "If embedding fails, data is still persisted and can be backfilled."
+    ),
 )
-async def ingest_pdf(file: UploadFile = File(...)) -> IngestionResponse:
-    if file.content_type not in ("application/pdf", "application/octet-stream"):
-        # Be lenient with content_type — some clients send octet-stream.
-        # We validate the extension instead.
-        pass
-
+async def ingest_pdf(
+    file: UploadFile = File(...),
+    db: Session = Depends(get_db),
+) -> IngestionResponse:
     filename = file.filename or "upload.pdf"
     if not filename.lower().endswith(".pdf"):
         raise HTTPException(
@@ -121,34 +196,31 @@ async def ingest_pdf(file: UploadFile = File(...)) -> IngestionResponse:
             detail="Uploaded file must be a PDF (filename must end with .pdf).",
         )
 
-    # Write upload to a temp file so pymupdf can open it by path.
-    suffix = ".pdf"
     tmp_path: str | None = None
     try:
-        with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
             tmp_path = tmp.name
             content = await file.read()
             if not content:
                 raise HTTPException(status_code=400, detail="Uploaded file is empty.")
             tmp.write(content)
 
-        # Create a Source for this PDF (no URL — it's an upload).
-        source = Source(
-            url=None,
-            title=filename,
-            source_type="pdf",
-        )
+        source = Source(url=None, title=filename, source_type="pdf")
 
         try:
             document = _ingestion.ingest_pdf(tmp_path, source_id=source.id)
         except DocumentIngestionError as exc:
             raise HTTPException(status_code=422, detail=str(exc))
 
-        # Patch filename back to the original upload name (not the temp path).
         document.filename = filename
-
         chunks = _chunker.chunk_document(document)
-        return _build_response(source, document, chunks)
+
+        # Transaction A — persist ingestion data
+        _persist_ingestion(db, source, document, chunks)
+        # Transaction B — post-ingestion embedding enrichment
+        embedded = _enrich_embeddings(db, chunks)
+
+        return _build_response(source, document, chunks, embedded)
 
     finally:
         if tmp_path and os.path.exists(tmp_path):
@@ -159,13 +231,25 @@ async def ingest_pdf(file: UploadFile = File(...)) -> IngestionResponse:
     "/url",
     response_model=IngestionResponse,
     summary="Ingest a web page by URL",
-    description="Provide a URL. Returns extracted page text chunked into searchable text segments.",
+    description=(
+        "Fetch a URL, extract text, chunk it, persist to PostgreSQL (transaction A), "
+        "then embed chunks (transaction B)."
+    ),
 )
-async def ingest_url(request: URLRequest) -> IngestionResponse:
+async def ingest_url(
+    request: URLRequest,
+    db: Session = Depends(get_db),
+) -> IngestionResponse:
     try:
         source, document = _collector.collect(request.url)
     except SourceCollectionError as exc:
         raise HTTPException(status_code=422, detail=str(exc))
 
     chunks = _chunker.chunk_document(document)
-    return _build_response(source, document, chunks)
+
+    # Transaction A — persist ingestion data
+    _persist_ingestion(db, source, document, chunks)
+    # Transaction B — post-ingestion embedding enrichment
+    embedded = _enrich_embeddings(db, chunks)
+
+    return _build_response(source, document, chunks, embedded)
