@@ -1,7 +1,7 @@
 import logging
 from typing import List
 
-from backend.services.embedding_service import embed_text
+from backend.services.embedding_service import embed_text, embed_texts
 from backend.services.retrieval_service import RetrievalResult
 from backend.services.web_research_service import WebChunk
 
@@ -33,12 +33,20 @@ class SourceRanker:
         combined: List[RetrievalResult] = list(local_results)
 
         if web_chunks:
+            # Cap the number of web chunks to rank to avoid extreme payloads
+            if len(web_chunks) > 100:
+                logger.info("SourceRanker: truncating %d web chunks to 100", len(web_chunks))
+                web_chunks = web_chunks[:100]
+
             # Embed the query to compare with web chunks
             query_vector = embed_text(query)
 
-            # Embed web chunks and compute distances
-            for wchunk in web_chunks:
-                w_vec = embed_text(wchunk.text)
+            # Batched embedding of all web chunks
+            chunk_texts = [wchunk.text for wchunk in web_chunks]
+            w_vecs = embed_texts(chunk_texts)
+
+            # Compute distances
+            for wchunk, w_vec in zip(web_chunks, w_vecs):
                 dist = _cosine_distance(query_vector, w_vec)
                 sim = 1.0 - dist
                 
