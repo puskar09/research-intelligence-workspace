@@ -138,13 +138,30 @@ class ResearchService:
         json_str = _extract_json(response_text)
         try:
             data = json.loads(json_str)
+            logger.info("Research: Synthesis succeeded on first attempt.")
             return data
         except json.JSONDecodeError as exc:
-            logger.error("Failed to parse synthesis JSON: %s. Response: %s", exc, response_text)
-            return {
-                "findings": [],
-                "overall_summary": "Failed to generate structured synthesis due to model output error."
-            }
+            logger.warning("Research: Synthesis JSON parsing failed (possibly truncated). Attempting ONE repair retry. Error: %s", exc)
+            repair_prompt = (
+                f"{prompt}\n\n"
+                f"--- ERROR IN PREVIOUS ATTEMPT ---\n"
+                f"Your previous response failed to parse as valid JSON. It may have been truncated or malformed.\n"
+                f"Error details: {exc}\n\n"
+                f"Please try again. Provide ONLY the completely fixed, valid JSON object following the exact schema required. "
+                f"Ensure your output is complete and not truncated. Do not include markdown blocks or any other text."
+            )
+            retry_text = self._llm.generate(repair_prompt)
+            retry_json_str = _extract_json(retry_text)
+            try:
+                data = json.loads(retry_json_str)
+                logger.info("Research: Synthesis repair retry succeeded.")
+                return data
+            except json.JSONDecodeError as retry_exc:
+                logger.error("Research: Synthesis repair retry also failed: %s. Response: %s", retry_exc, retry_text)
+                return {
+                    "findings": [],
+                    "overall_summary": "Failed to generate structured synthesis due to model output error."
+                }
 
     def query(
         self,
