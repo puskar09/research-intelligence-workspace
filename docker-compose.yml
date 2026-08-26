@@ -27,6 +27,27 @@ services:
       timeout: 5s
       retries: 10
 
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: riw_backend
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: ${POSTGRES_DB:-riw}
+      POSTGRES_USER: ${POSTGRES_USER:-riw_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-riw_password}
+      POSTGRES_PORT: 5432
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
 volumes:
   riw_pgdata:
     driver: local
+
