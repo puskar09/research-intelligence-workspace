@@ -18,11 +18,16 @@ from backend.services.retrieval_service import RetrievalResult
 
 @dataclass(frozen=True)
 class SourceReference:
-    """Deduplicated source entry for the API response."""
+    """1:1 source entry for the API response."""
+    chunk_id: str
     source_id: str
     document_id: str
     page_number: int
     similarity_score: float
+    # Optional enriched fields — present when the pipeline has the data
+    text: str | None = None
+    source_type: str | None = None  # "pdf" | "web"
+    url: str | None = None
 
 
 class ContextBuilder:
@@ -53,7 +58,6 @@ class ContextBuilder:
             return "", []
 
         lines: list[str] = []
-        seen_pages: set[tuple[str, int]] = set()
         sources: list[SourceReference] = []
 
         for i, chunk in enumerate(chunks, start=1):
@@ -65,16 +69,24 @@ class ContextBuilder:
             lines.append(chunk.text.strip())
             lines.append("")  # blank line separator
 
-            # Deduplicate at page granularity for the source list.
-            page_key = (chunk.document_id, chunk.page_number)
-            if page_key not in seen_pages:
-                seen_pages.add(page_key)
-                sources.append(SourceReference(
-                    source_id=chunk.source_id,
-                    document_id=chunk.document_id,
-                    page_number=chunk.page_number,
-                    similarity_score=chunk.similarity_score,
-                ))
+            # Determine source type and url from existing pipeline metadata.
+            # Web chunks are identified by source_id == "web" (set in SourceRanker).
+            # For web chunks, document_id carries the source URL.
+            is_web = chunk.source_id == "web"
+            source_type = "web" if is_web else "pdf"
+            url = chunk.document_id if is_web else None
+
+            # 1:1 mapping to preserve citation accuracy
+            sources.append(SourceReference(
+                chunk_id=chunk.chunk_id,
+                source_id=chunk.source_id,
+                document_id=chunk.document_id,
+                page_number=chunk.page_number,
+                similarity_score=chunk.similarity_score,
+                text=chunk.text.strip(),
+                source_type=source_type,
+                url=url,
+            ))
 
         context_text = "\n".join(lines).rstrip()
         return context_text, sources

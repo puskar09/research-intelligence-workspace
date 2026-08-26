@@ -1,0 +1,122 @@
+[
+    {
+        "id": "q1",
+        "question": "What is the penalty for offences where no separate punishment has been provided?",
+        "expected_source": "test.pdf",
+        "expected_pages": [22],
+        "expected_keywords": ["penalty", "punishment", "imprisonment", "fine"],
+        "answerable": true
+    },
+    {
+        "id": "q2",
+        "question": "Which organisations of a political nature are restricted from receiving foreign contribution?",
+        "expected_source": "test.pdf",
+        "expected_pages": [10, 11],
+        "expected_keywords": ["political nature", "specified", "prohibited"],
+        "answerable": true
+    },
+    {
+        "id": "q3",
+        "question": "Can a candidate for election receive foreign contribution?",
+        "expected_source": "test.pdf",
+        "expected_pages": [3, 6],
+        "expected_keywords": ["candidate for election", "prohibited", "accept"],
+        "answerable": true
+    },
+    {
+        "id": "q4",
+        "question": "What is the definition of foreign hospitality?",
+        "expected_source": "test.pdf",
+        "expected_pages": [3, 7],
+        "expected_keywords": ["foreign hospitality", "offer", "cost of travel"],
+        "answerable": true
+    },
+    {
+        "id": "q5",
+        "question": "Is a company engaged in the broadcast of audio news permitted to accept foreign contribution?",
+        "expected_source": "test.pdf",
+        "expected_pages": [10],
+        "expected_keywords": ["broadcast of audio news", "prohibited", "association or company"],
+        "answerable": true
+    },
+    {
+        "id": "q6",
+        "question": "Can a foreign contribution be transferred to any other person?",
+        "expected_source": "test.pdf",
+        "expected_pages": [11, 12],
+        "expected_keywords": ["transferred to any other person", "not transfer", "registered"],
+        "answerable": true
+    },
+    {
+        "id": "q7",
+        "question": "How long is a certificate of registration valid for?",
+        "expected_source": "test.pdf",
+        "expected_pages": [17],
+        "expected_keywords": ["valid for a period of five years", "certificate of registration"],
+        "answerable": true
+    },
+    {
+        "id": "q8",
+        "question": "Does the Act apply to citizens of India outside India?",
+        "expected_source": "test.pdf",
+        "expected_pages": [1, 6],
+        "expected_keywords": ["citizens of India outside India", "extent and application"],
+        "answerable": true
+    },
+    {
+        "id": "q9",
+        "question": "What is the restriction on administrative expenses from foreign contribution?",
+        "expected_source": "test.pdf",
+        "expected_pages": [12, 25],
+        "expected_keywords": ["administrative expenses", "fifty per cent", "twenty per cent", "defray"],
+        "answerable": true
+    },
+    {
+        "id": "q10",
+        "question": "When can a person whose certificate has been cancelled apply again for registration?",
+        "expected_source": "test.pdf",
+        "expected_pages": [17],
+        "expected_keywords": ["certificate has been cancelled", "three years"],
+        "answerable": true
+    },
+    {
+        "id": "q11",
+        "question": "What is the recipe for baking a chocolate cake?",
+        "expected_source": "",
+        "expected_pages": [],
+        "expected_keywords": [],
+        "answerable": false
+    },
+    {
+        "id": "q12",
+        "question": "How many goals did Lionel Messi score in the 2022 World Cup?",
+        "expected_source": "",
+        "expected_pages": [],
+        "expected_keywords": [],
+        "answerable": false
+    },
+    {
+        "id": "q13",
+        "question": "What is the minimum capital requirement to start a domestic bank in India?",
+        "expected_source": "",
+        "expected_pages": [],
+        "expected_keywords": [],
+        "answerable": false
+    },
+    {
+        "id": "q14",
+        "question": "How do you perform a successful heart transplant surgery?",
+        "expected_source": "",
+        "expected_pages": [],
+        "expected_keywords": [],
+        "answerable": false
+    },
+    {
+        "id": "q15",
+        "question": "What are the rules for investing in cryptocurrency under FEMA?",
+        "expected_source": "",
+        "expected_pages": [],
+        "expected_keywords": [],
+        "answerable": false
+    }
+]

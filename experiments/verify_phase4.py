@@ -76,16 +76,16 @@ def _report_and_exit():
 # ── 1. LLM service can initialise ───────────────────────────────────────────
 section("1. LLM service import and init")
 try:
-    from backend.services.llm_service import GeminiLLMService, LLMServiceError
-    llm = GeminiLLMService()
+    from backend.services.llm_service import ClaudeLLMService, LLMServiceError
+    llm = ClaudeLLMService()
     print(f"  Model: {llm.model_name}")
-    check("GeminiLLMService initialised", True)
+    check("ClaudeLLMService initialised", True)
 except LLMServiceError as e:
-    check("GeminiLLMService initialised", False, str(e))
-    print("\n  => Set GOOGLE_API_KEY in .env and rerun.")
+    check("ClaudeLLMService initialised", False, str(e))
+    print("\n  => Set ANTHROPIC_API_KEY and CLAUDE_MODEL in .env and rerun.")
     _report_and_exit()
 except Exception as e:
-    check("GeminiLLMService initialised", False, str(e))
+    check("ClaudeLLMService initialised", False, str(e))
     _report_and_exit()
 
 # ── 2. Context builder formats chunks correctly ──────────────────────────────
@@ -119,8 +119,9 @@ check("Context is non-empty string", isinstance(ctx, str) and len(ctx) > 0)
 check("Context contains chunk text", "Foreign contribution" in ctx)
 check("Context numbered [1]", "[1]" in ctx)
 check("Context numbered [2]", "[2]" in ctx)
-check("Sources deduplicated at page level", len(srcs) == 2, f"got {len(srcs)} (expected 2)")
+check("Sources mapped 1:1 to chunks", len(srcs) == 3, f"got {len(srcs)} (expected 3)")
 check("Source fields correct", srcs[0].page_number == 3 and srcs[1].page_number == 7)
+check("Source chunk_id present", hasattr(srcs[0], 'chunk_id'))
 
 # ── 3. RAGService imports ────────────────────────────────────────────────────
 section("3. RAGService import")
@@ -160,7 +161,7 @@ sources = rag["sources"]
 check("sources is a list", isinstance(sources, list))
 if sources:
     s = sources[0]
-    for field in ["source_id", "document_id", "page_number", "similarity_score"]:
+    for field in ["chunk_id", "source_id", "document_id", "page_number", "similarity_score"]:
         check(f"source has '{field}'", field in s)
     check("page_number >= 1", s["page_number"] >= 1)
     check("similarity_score in (0, 1]", 0 < s["similarity_score"] <= 1.0,

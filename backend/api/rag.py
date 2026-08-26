@@ -36,7 +36,7 @@ from sqlalchemy.orm import Session
 
 from backend.db.database import get_db
 from backend.services.context_builder import ContextBuilder
-from backend.services.llm_service import GeminiLLMService, LLMServiceError
+from backend.services.llm_service import ClaudeLLMService, LLMServiceError
 from backend.services.rag_service import RAGResult, RAGService
 from backend.services.retrieval_service import RetrievalService
 
@@ -56,7 +56,7 @@ def _get_rag_service() -> RAGService:
         try:
             _rag_service = RAGService(
                 retrieval_service=RetrievalService(),
-                llm_service=GeminiLLMService(),
+                llm_service=ClaudeLLMService(),
                 context_builder=ContextBuilder(),
             )
         except LLMServiceError as exc:
@@ -77,6 +77,7 @@ class RAGQueryRequest(BaseModel):
 
 
 class SourceRef(BaseModel):
+    chunk_id: str
     source_id: str
     document_id: str
     page_number: int
@@ -136,6 +137,7 @@ def rag_query(
 
     sources = [
         SourceRef(
+            chunk_id=s.chunk_id,
             source_id=s.source_id,
             document_id=s.document_id,
             page_number=s.page_number,

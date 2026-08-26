@@ -121,3 +121,70 @@ class GeminiLLMService(BaseLLMService):
         except Exception as exc:
             logger.exception("Gemini API call failed")
             raise LLMServiceError(f"Gemini API error: {exc}") from exc
+
+
+class ClaudeLLMService(BaseLLMService):
+    """
+    LLM service backed by Anthropic Claude via the anthropic SDK.
+
+    Reads ANTHROPIC_API_KEY and CLAUDE_MODEL from the environment.
+    """
+
+    def __init__(self) -> None:
+        api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+        if not api_key:
+            raise LLMServiceError(
+                "ANTHROPIC_API_KEY is not set. "
+                "Add it to your .env file: ANTHROPIC_API_KEY=your-key-here"
+            )
+            
+        self._model = os.environ.get("CLAUDE_MODEL", "")
+        if not self._model:
+            raise LLMServiceError(
+                "CLAUDE_MODEL is not set. "
+                "Add it to your .env file (e.g., CLAUDE_MODEL=claude-3-5-sonnet-20241022)"
+            )
+
+        try:
+            import anthropic
+            self._client = anthropic.Anthropic(api_key=api_key)
+        except ImportError as exc:
+            raise LLMServiceError(
+                "anthropic is not installed. Run: pip install anthropic"
+            ) from exc
+
+        logger.info("ClaudeLLMService ready: model=%s", self._model)
+
+    @property
+    def model_name(self) -> str:
+        return self._model
+
+    def generate(self, prompt: str) -> str:
+        """
+        Send a prompt to Claude and return the text response.
+
+        Raises:
+            LLMServiceError: On API error or empty response.
+        """
+        try:
+            response = self._client.messages.create(
+                model=self._model,
+                max_tokens=2048,
+                messages=[
+                    {"role": "user", "content": prompt}
+                ]
+            )
+            text = ""
+            for block in response.content:
+                if hasattr(block, "text"):
+                    text = block.text
+                    break
+            if not text:
+                raise LLMServiceError("Claude returned an empty response.")
+            logger.debug("LLM response length: %d chars", len(text))
+            return text.strip()
+        except LLMServiceError:
+            raise
+        except Exception as exc:
+            logger.exception("Claude API call failed")
+            raise LLMServiceError(f"Claude API error: {exc}") from exc

@@ -148,6 +148,17 @@ class RAGService:
 
         answer = self._llm.generate(prompt)
 
+        import re
+        cited_indices = set(int(x) for x in re.findall(r'\[(\d+)\]', answer))
+        
+        if cited_indices:
+            filtered_sources = [s for i, s in enumerate(sources, start=1) if i in cited_indices]
+            sources = filtered_sources
+        else:
+            # If no citations are found (e.g. insufficient information), we can choose to return empty sources
+            # or the full retrieved context. To maximize precision, we return empty sources if no citations exist.
+            sources = []
+
         logger.info(
             "RAG: answer generated, length=%d chars, sources=%d",
             len(answer),

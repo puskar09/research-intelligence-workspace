@@ -16,6 +16,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from backend.api.rag import router as rag_router
+from backend.api.research import router as research_router
 from backend.api.search import router as search_router
 from backend.api.sources import router as sources_router
 from backend.db.init_db import init_db
@@ -51,7 +52,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="Research Intelligence Workspace",
     description="Backend API for the Research Intelligence Workspace pipeline.",
-    version="0.4.0",
+    version="0.5.0",
     lifespan=lifespan,
 )
 
@@ -59,6 +60,7 @@ app = FastAPI(
 app.include_router(sources_router, prefix="/api/sources", tags=["sources"])
 app.include_router(search_router, prefix="/api/search", tags=["search"])
 app.include_router(rag_router, prefix="/api/rag", tags=["rag"])
+app.include_router(research_router, prefix="/api/research", tags=["research"])
 
 
 # --- Health ---

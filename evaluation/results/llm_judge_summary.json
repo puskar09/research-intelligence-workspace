@@ -1,0 +1,11 @@
+{
+  "cases_evaluated": 15,
+  "cases_skipped": 0,
+  "evaluator_failures": 0,
+  "average_correctness": 4.133333333333334,
+  "average_faithfulness": 4.733333333333333,
+  "average_citation_correctness": 4.333333333333333,
+  "average_completeness": 3.8666666666666667,
+  "hallucination_rate": 0.0,
+  "correct_abstention_rate": 0.8
+}
