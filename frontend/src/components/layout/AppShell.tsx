@@ -23,6 +23,10 @@ export default function AppShell() {
     }
   };
 
+  const handleSourceRemoved = (sourceId: string) => {
+    setSources((prev) => prev.filter((s) => s.id !== sourceId));
+  };
+
   return (
     <div className="flex h-screen w-full bg-brand-bg text-brand-text font-sans overflow-hidden">
       {/* Mobile Sidebar Overlay */}
@@ -47,7 +51,7 @@ export default function AppShell() {
             ✕
           </button>
         </div>
-        <SourceLibrary sources={sources} onSourceAdded={handleSourceAdded} />
+        <SourceLibrary sources={sources} onSourceAdded={handleSourceAdded} onSourceRemoved={handleSourceRemoved} />
       </aside>
 
       {/* Main Workspace */}

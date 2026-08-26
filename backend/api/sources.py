@@ -253,3 +253,37 @@ async def ingest_url(
     embedded = _enrich_embeddings(db, chunks)
 
     return _build_response(source, document, chunks, embedded)
+
+
+@router.delete(
+    "/{source_id}",
+    status_code=204,
+    summary="Delete a source and all indexed data",
+    description="Permanently removes a source and its associated documents, pages, chunks, and embeddings.",
+)
+async def delete_source(
+    source_id: str,
+    db: Session = Depends(get_db),
+) -> None:
+    from backend.db.orm_models import SourceORM
+    from sqlalchemy.exc import SQLAlchemyError
+    
+    try:
+        source = db.query(SourceORM).filter(SourceORM.id == source_id).first()
+        if not source:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Source with id '{source_id}' not found.",
+            )
+        db.delete(source)
+        db.commit()
+        logger.info("Deleted source=%s and all associated data.", source_id)
+    except HTTPException:
+        raise
+    except SQLAlchemyError as exc:
+        db.rollback()
+        logger.exception("DB error deleting source=%s", source_id)
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to delete source due to a database error.",
+        ) from exc
