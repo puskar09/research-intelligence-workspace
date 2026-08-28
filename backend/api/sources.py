@@ -23,7 +23,7 @@ import os
 import tempfile
 from datetime import datetime
 
-from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
+from fastapi import APIRouter, BackgroundTasks, Depends, File, HTTPException, UploadFile
 from pydantic import BaseModel, field_validator
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
@@ -171,6 +171,15 @@ def _enrich_embeddings(
         return 0
 
 
+def _enrich_embeddings_bg(chunks: list[Chunk]) -> None:
+    from backend.db.database import SessionLocal
+    db = SessionLocal()
+    try:
+        _enrich_embeddings(db, chunks)
+    finally:
+        db.close()
+
+
 # ---------------------------------------------------------------------------
 # Endpoints
 # ---------------------------------------------------------------------------
@@ -186,6 +195,7 @@ def _enrich_embeddings(
     ),
 )
 async def ingest_pdf(
+    background_tasks: BackgroundTasks,
     file: UploadFile = File(...),
     db: Session = Depends(get_db),
 ) -> IngestionResponse:
@@ -218,7 +228,8 @@ async def ingest_pdf(
         # Transaction A — persist ingestion data
         _persist_ingestion(db, source, document, chunks)
         # Transaction B — post-ingestion embedding enrichment
-        embedded = _enrich_embeddings(db, chunks)
+        background_tasks.add_task(_enrich_embeddings_bg, chunks)
+        embedded = 0
 
         return _build_response(source, document, chunks, embedded)
 
@@ -238,6 +249,7 @@ async def ingest_pdf(
 )
 async def ingest_url(
     request: URLRequest,
+    background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
 ) -> IngestionResponse:
     try:
@@ -250,7 +262,8 @@ async def ingest_url(
     # Transaction A — persist ingestion data
     _persist_ingestion(db, source, document, chunks)
     # Transaction B — post-ingestion embedding enrichment
-    embedded = _enrich_embeddings(db, chunks)
+    background_tasks.add_task(_enrich_embeddings_bg, chunks)
+    embedded = 0
 
     return _build_response(source, document, chunks, embedded)
 
