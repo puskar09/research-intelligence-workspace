@@ -31,8 +31,11 @@ class SourceRanker:
         if not local_results and not web_chunks:
             return []
 
-        combined: List[RetrievalResult] = list(local_results)
-
+        # Create a combined list of local and web chunks
+        ranked_local = list(local_results)
+        ranked_local.sort(key=lambda x: x.cosine_distance)
+        
+        ranked_web = []
         if web_chunks:
             # Cap the number of web chunks to rank to avoid extreme payloads
             if not web_chunk_vectors and len(web_chunks) > 100:
@@ -49,7 +52,6 @@ class SourceRanker:
                 chunk_texts = [wchunk.text for wchunk in web_chunks]
                 w_vecs = embed_texts(chunk_texts)
 
-
             # Compute distances
             for wchunk, w_vec in zip(web_chunks, w_vecs):
                 dist = _cosine_distance(query_vector, w_vec)
@@ -65,11 +67,38 @@ class SourceRanker:
                     page_number=1,
                     chunk_index=wchunk.chunk_index
                 )
-                combined.append(res)
+                ranked_web.append(res)
                 
-        # Sort by cosine distance ascending (lowest distance = highest similarity)
-        combined.sort(key=lambda x: x.cosine_distance)
-        
-        top_results = combined[:top_k]
-        logger.info("SourceRanker: ranked %d total chunks, returning top %d", len(combined), len(top_results))
+            ranked_web.sort(key=lambda x: x.cosine_distance)
+
+        # Merge local and web chunks with diversity guarantee
+        if not ranked_web:
+            top_results = ranked_local[:top_k]
+        elif not ranked_local:
+            top_results = ranked_web[:top_k]
+        else:
+            # Both exist. Guarantee at least 1 web chunk if available.
+            top_results = []
+            
+            # 1. Take the absolute best chunk overall
+            best_local = ranked_local[0]
+            best_web = ranked_web[0]
+            
+            # We want to force at least 1 web chunk in the top_k.
+            # We take 1 web chunk and the rest from the combined pool.
+            top_results.append(ranked_web.pop(0))
+            
+            # Pool the remaining chunks together and sort them by distance
+            remaining_pool = ranked_local + ranked_web
+            remaining_pool.sort(key=lambda x: x.cosine_distance)
+            
+            # Fill the rest of the top_k
+            slots_left = top_k - 1
+            if slots_left > 0:
+                top_results.extend(remaining_pool[:slots_left])
+                
+            # Re-sort the final top_results by distance so they appear logically ordered
+            top_results.sort(key=lambda x: x.cosine_distance)
+            
+        logger.info("SourceRanker: ranked total chunks, returning top %d", len(top_results))
         return top_results
