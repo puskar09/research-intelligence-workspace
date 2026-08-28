@@ -1,0 +1,880 @@
+[
+  {
+    "id": "q1",
+    "question": "What is the penalty for offences where no separate punishment has been provided?",
+    "answerable": true,
+    "expected_pages": [
+      22
+    ],
+    "expected_keywords": [
+      "penalty",
+      "punishment",
+      "imprisonment",
+      "fine"
+    ],
+    "retrieved_chunks": [
+      {
+        "text": " addition to any other fine which may be imposed on \nsuch person under this Act. \n37. Penalty for offences where no separate punishment has been provided.\u2014Whoever fails to \ncomply with any provision of this Act for which no separate penalty has been provided in this Act shall \nbe punished with imprisonment for a term which may extend to one year, or with fine or with both.",
+        "page_number": 22,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " be punished with imprisonment for a term which may extend to five years, or with fine, or with \nboth. \n36. Power to impose additional fine where article or currency or security is not available for \nconfiscation.\u2014Notwithstanding anything contained in the Code of Criminal Procedure, 1973 (2 of 1974), \nthe court trying a person, who, in relation to any article or currency or security, whether Indian or foreign, \ndoes or omits to do any act which act or omission would render such article or curren",
+        "page_number": 22,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "or subsequent offence committed after the \nexpiry of a period of three years from the date on which the offence was previously compounded, shall be \ndeemed to be a first offence. \n(3) Every officer or authority referred to in sub-section (1) shall exercise the powers to compound an \noffence, subject to the direction, control and supervision of the Central Government.",
+        "page_number": 23,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "on or concealment \nof material fact, \nshall, on conviction by a court, be liable to imprisonment for a term which may extend to six months or \nwith fine or with both. \n34. Penalty for article or currency or security obtained in contravention of section 10.\u2014If any \nperson, on whom any prohibitory order has been served under section 10, pays, delivers, transfers or \notherwise deals with, in any manner whatsoever, any article or currency or security, whether Indian or \nforeign, in contravention of ",
+        "page_number": 22,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "uthorities and for such sums as the Central Government may, by notification in the Official Gazette, \nspecify in this behalf. \n(2) Nothing in sub-section (1) shall apply to an offence committed by an individual or association or \nits officer or other employee within a period of three years from the date on which a similar offence \ncommitted by it or him was compounded under this section. \nExplanation.\u2014For the purposes of this section, any second or subsequent offence committed after the \nexpiry ",
+        "page_number": 23,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "According to [1], under Section 37, whoever fails to comply with any provision of the Act for which no separate penalty has been provided shall be punished with imprisonment for a term which may extend to one year, or with fine, or with both.",
+    "citations": [
+      {
+        "chunk_id": "16c56dc8-704f-46d7-9be9-78cc2c9fffe3",
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd",
+        "page_number": 22,
+        "similarity_score": 0.740362
+      }
+    ],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2733,
+      "top_k": 5
+    },
+    "latency": 2.5462534427642822,
+    "status": "success"
+  },
+  {
+    "id": "q2",
+    "question": "Which organisations of a political nature are restricted from receiving foreign contribution?",
+    "answerable": true,
+    "expected_pages": [
+      10,
+      11
+    ],
+    "expected_keywords": [
+      "political nature",
+      "specified",
+      "prohibited"
+    ],
+    "retrieved_chunks": [
+      {
+        "text": "penses and the manner in which the administrative expenses referred to in sub-section (1) shall be \ncalculated. \n9. Power of Central Government to prohibit receipt of foreign contribution, etc., in certain \ncases.\u2014The Central Government may\u2014 \n(a) prohibit any person or organisation not specified in section 3, from accepting any foreign \ncontribution; \n(b) require any person or class of persons, not specified in section 6, to obtain prior permission of \nthe Central Government before accepting any",
+        "page_number": 12,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "taken \nreasonable activity in its chosen field for the benefit of the society for which the foreign contribution \nis proposed to be utilised; \n(c) the person making an application for giving prior permission under sub-section (1) has \nprepared a reasonable project for the benefit of the society for which the foreign contribution is \nproposed to be utilised; \n(d) in case the person being an individual, such individual has neither been convicted under any \nlaw for the time being in force nor any p",
+        "page_number": 15,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " of 1999) shall have the meanings respectively assigned to \nthem in those Acts.  \nCHAPTER II \nREGULATION OF FOREIGN CONTRIBUTION AND FOREIGN HOSPITALITY \n3. Prohibition to accept foreign contribution.\u2014(1) No foreign contribution shall be accepted by \nany\u2014 \n(a) candidate for election; \n(b) correspondent, columnist, cartoonist, editor, owner, printer or publisher of a registered \nnewspaper; \n1[(c) public servant, Judge, Government servant or employee of any corporation or any other \nbody controlle",
+        "page_number": 9,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "1 \n \n \n \n \n \n \n \n \n \n \n \nThe Foreign Contribution (Regulation) Act, 2010 \n(ACT NO 42 OF 2010) \n[As on the 1st July, 2026]",
+        "page_number": 1,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "3 \n \nTHE FOREIGN CONTRIBUTION (REGULATION) ACT, 2010 \n____________ \nARRANGEMENT OF SECTIONS \n____________ \nCHAPTER I \nPRELIMINARY \nSECTIONS \n1. Short title, extent, application and commencement. \n2. Definitions. \n \nCHAPTER II \nREGULATION OF FOREIGN CONTRIBUTION AND FOREIGN HOSPITALITY \n3. Prohibition to accept foreign contribution. \n4. Persons to whom section 3 shall not apply. \n5. Procedure to notify an organisation of a political nature. \n6. Restriction on acceptance of foreign hospitality. \n7",
+        "page_number": 3,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "The provided documents do not contain enough information to answer this question.",
+    "citations": [],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2610,
+      "top_k": 5
+    },
+    "latency": 2.833345651626587,
+    "status": "success"
+  },
+  {
+    "id": "q3",
+    "question": "Can a candidate for election receive foreign contribution?",
+    "answerable": true,
+    "expected_pages": [
+      3,
+      6
+    ],
+    "expected_keywords": [
+      "candidate for election",
+      "prohibited",
+      "accept"
+    ],
+    "retrieved_chunks": [
+      {
+        "text": "19 \n \n21. Intimation by candidate for election.\u2014Every candidate for election, who had received any \nforeign contribution, at any time within one hundred and eighty days immediately preceding the date on \nwhich he is duly nominated as such candidate, shall give, within such time and in such manner as may be \nprescribed, an intimation to the Central Government or prescribed authority or both as to the amount of \nforeign contribution received by him, the source from which, and the manner in which, ",
+        "page_number": 19,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "taken \nreasonable activity in its chosen field for the benefit of the society for which the foreign contribution \nis proposed to be utilised; \n(c) the person making an application for giving prior permission under sub-section (1) has \nprepared a reasonable project for the benefit of the society for which the foreign contribution is \nproposed to be utilised; \n(d) in case the person being an individual, such individual has neither been convicted under any \nlaw for the time being in force nor any p",
+        "page_number": 15,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " of 1999) shall have the meanings respectively assigned to \nthem in those Acts.  \nCHAPTER II \nREGULATION OF FOREIGN CONTRIBUTION AND FOREIGN HOSPITALITY \n3. Prohibition to accept foreign contribution.\u2014(1) No foreign contribution shall be accepted by \nany\u2014 \n(a) candidate for election; \n(b) correspondent, columnist, cartoonist, editor, owner, printer or publisher of a registered \nnewspaper; \n1[(c) public servant, Judge, Government servant or employee of any corporation or any other \nbody controlle",
+        "page_number": 9,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "ian or foreign, which has been \naccepted from any foreign source, to any person if he knows or has reasonable cause to believe that such \nother person intends, or is likely, to deliver such currency to any political party or any person referred to \nin sub-section (1), or both. \n(c) No citizen of India resident outside India shall deliver any currency, whether Indian or foreign, \nwhich has been accepted from any foreign source, to\u2014 \n(i) any political party or any person referred to in sub-section",
+        "page_number": 10,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "eceived by him. \n1[7. Prohibition to transfer foreign contribution to other person.\u2014No person who\u2014 \n(a) is registered and granted a certificate or has obtained prior permission under this Act; and \n(b) receives any foreign contribution,  \nshall transfer such foreign contribution to any other person.] \n8. Restriction to utilise foreign contribution for administrative purpose.\u2014(1) Every person, who \nis registered and granted a certificate or given prior permission under this Act and receives any f",
+        "page_number": 12,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "No, a candidate for election is prohibited from accepting foreign contribution [3]. However, if such a candidate had received foreign contribution within the 180 days immediately preceding the date of their nomination, they must intimate the Central Government or prescribed authority about the amount, source, and manner of receipt of such contribution [1].",
+    "citations": [
+      {
+        "chunk_id": "2292b5f0-a224-4165-8e5b-20835b6a5efd",
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd",
+        "page_number": 19,
+        "similarity_score": 0.624017
+      },
+      {
+        "chunk_id": "217e4edc-da49-4b68-915c-5a245dfa1a43",
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd",
+        "page_number": 9,
+        "similarity_score": 0.474997
+      }
+    ],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2990,
+      "top_k": 5
+    },
+    "latency": 3.53671932220459,
+    "status": "success"
+  },
+  {
+    "id": "q4",
+    "question": "What is the definition of foreign hospitality?",
+    "answerable": true,
+    "expected_pages": [
+      3,
+      7
+    ],
+    "expected_keywords": [
+      "foreign hospitality",
+      "offer",
+      "cost of travel"
+    ],
+    "retrieved_chunks": [
+      {
+        "text": "12 \n \n6. Restriction on acceptance of foreign hospitality.\u2014No member of a Legislature or office-bearer \nof a political party or Judge or Government servant or employee of any corporation or any other body \nowned or controlled by the Government shall, while visiting any country or territory outside India, accept, \nexcept with the prior permission of the Central Government, any foreign hospitality: \nProvided that it shall not be necessary to obtain any such permission for an emergent medical aid \n",
+        "page_number": 12,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "in lieu of goods or services rendered by such person in the ordinary course of his business, trade \nor commerce whether within India or outside India or any contribution received from an agent of a \nforeign source towards such fee or cost shall be excluded from the definition of foreign contribution \nwithin the meaning of this clause; \n(i) \u201cforeign hospitality\u201d means any offer, not being a purely casual one, made in cash or kind by a \nforeign source for providing a person with the costs of trave",
+        "page_number": 7,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "e \nsource from which and the manner in which such hospitality was received: \nProvided that no such prohibition or requirement shall be made unless the Central Government is \nsatisfied that the acceptance of foreign contribution by such person or class of persons, as the case \nmay be, or the acceptance of foreign hospitality by such person, is likely to affect prejudicially\u2014 \n(i) the sovereignty and integrity of India; or \n(ii) public interest; or \n(iii) freedom or fairness of election to any Leg",
+        "page_number": 13,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "striction on acceptance of foreign hospitality. \n7. Prohibition to transfer foreign contribution to other person. \n8. Restriction to utilise foreign contribution for administrative purpose. \n9. Power of Central Government to prohibit receipt of foreign contribution, etc., in certain cases. \n10. Power to prohibit payment of currency received in contravention of the Act. \n \nCHAPTER III \nREGISTRATION \n11. Registration of certain persons with Central Government. \n12. Grant of certificate of registra",
+        "page_number": 3,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "on of \nthe Central Government before accepting any foreign hospitality; \n(c) require any person or class of persons not specified in section 11, to furnish intimation within \nsuch time and in such manner as may be prescribed as to the amount of any foreign contribution \nreceived by such person or class of persons as the case may be, and the source from which and the \nmanner in which such contribution was received and the purpose for which and the manner in which \nsuch foreign contribution was ut",
+        "page_number": 12,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "Based on the context, \"foreign hospitality\" means any offer, not being a purely casual one, made in cash or kind by a foreign source for providing a person with the costs of travel [2].",
+    "citations": [
+      {
+        "chunk_id": "0fb46d5f-c23c-4200-a65a-f0bffdf114bc",
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd",
+        "page_number": 7,
+        "similarity_score": 0.576203
+      }
+    ],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2989,
+      "top_k": 5
+    },
+    "latency": 1.6809542179107666,
+    "status": "success"
+  },
+  {
+    "id": "q5",
+    "question": "Is a company engaged in the broadcast of audio news permitted to accept foreign contribution?",
+    "answerable": true,
+    "expected_pages": [
+      10
+    ],
+    "expected_keywords": [
+      "broadcast of audio news",
+      "prohibited",
+      "association or company"
+    ],
+    "retrieved_chunks": [
+      {
+        "text": " of 1999) shall have the meanings respectively assigned to \nthem in those Acts.  \nCHAPTER II \nREGULATION OF FOREIGN CONTRIBUTION AND FOREIGN HOSPITALITY \n3. Prohibition to accept foreign contribution.\u2014(1) No foreign contribution shall be accepted by \nany\u2014 \n(a) candidate for election; \n(b) correspondent, columnist, cartoonist, editor, owner, printer or publisher of a registered \nnewspaper; \n1[(c) public servant, Judge, Government servant or employee of any corporation or any other \nbody controlle",
+        "page_number": 9,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "prior permission under this Act and receives any foreign \ncontribution,\u2014 \n(a) shall utilise such contribution for the purposes for which the contribution has been received: \nProvided that any foreign contribution or any income arising out of it shall not be used for \nspeculative business: \nProvided further that the Central Government shall, by rules, specify the activities or business \nwhich shall be construed as speculative business for the purpose of this section; \n(b) shall not defray as far ",
+        "page_number": 12,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "ral Government \nunder that sub-section, accept any foreign contribution only after obtaining the prior permission of the \nCentral Government and such prior permission shall be valid for the specific purpose for which it is \nobtained and from the specific source:",
+        "page_number": 13,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "any foreign contribution under clause (a) of  \nsection 10 of the repealed Act, in so far as it is not inconsistent with the provisions of this Act, shall \nbe deemed to be an association prohibited from accepting any foreign contribution under section 9 of \nthis Act; \n(e) permission obtained under clause (b) of section 10 of the repealed Act shall, in so far as it is \nnot inconsistent with the provisions of this Act, be deemed to be the permission until such permission \nis withdrawn by the Centra",
+        "page_number": 27,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " in clause (o) of \nsection 2 of` the Foreign Exchange Management Act, 1999 (42 of 1999). \nExplanation 1.\u2014A donation, delivery or transfer of any article, currency or foreign security \nreferred to in this clause by any person who has received it from any foreign source, either directly or \nthrough one or more persons, shall also be deemed to be foreign contribution within the meaning of \nthis clause. \nExplanation 2.\u2014The interest accrued on the foreign contribution deposited in any bank referred \n",
+        "page_number": 7,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "The provided documents do not contain enough information to answer this question.",
+    "citations": [],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2748,
+      "top_k": 5
+    },
+    "latency": 1.595916509628296,
+    "status": "success"
+  },
+  {
+    "id": "q6",
+    "question": "Can a foreign contribution be transferred to any other person?",
+    "answerable": true,
+    "expected_pages": [
+      11,
+      12
+    ],
+    "expected_keywords": [
+      "transferred to any other person",
+      "not transfer",
+      "registered"
+    ],
+    "retrieved_chunks": [
+      {
+        "text": "eceived by him. \n1[7. Prohibition to transfer foreign contribution to other person.\u2014No person who\u2014 \n(a) is registered and granted a certificate or has obtained prior permission under this Act; and \n(b) receives any foreign contribution,  \nshall transfer such foreign contribution to any other person.] \n8. Restriction to utilise foreign contribution for administrative purpose.\u2014(1) Every person, who \nis registered and granted a certificate or given prior permission under this Act and receives any f",
+        "page_number": 12,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "; or \n(f) by way of remittance received, in the ordinary course of business through any official channel, \npost office, or any authorised person in foreign exchange under the Foreign Exchange Management \nAct, 1999 (42 of 1999); or \n(g) by way of any scholarship, stipend or any payment of like nature: \nProvided that in case any foreign contribution received by any person specified under section 3, \nfor any of the purposes other than those specified under this section, such contribution shall be \n",
+        "page_number": 11,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " in clause (o) of \nsection 2 of` the Foreign Exchange Management Act, 1999 (42 of 1999). \nExplanation 1.\u2014A donation, delivery or transfer of any article, currency or foreign security \nreferred to in this clause by any person who has received it from any foreign source, either directly or \nthrough one or more persons, shall also be deemed to be foreign contribution within the meaning of \nthis clause. \nExplanation 2.\u2014The interest accrued on the foreign contribution deposited in any bank referred \n",
+        "page_number": 7,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": ", the source from which, and the manner in which, such foreign \ncontribution was received and the purposes for which and the manner in which such foreign contribution \nwas utilised by him. \n22. Disposal of assets created out of foreign contribution.\u2014Where any person who was permitted \nto accept foreign contribution under this Act, ceases to exist or has become defunct, all the assets of such \nperson shall be disposed of in accordance with the provisions contained in any law for the time being in",
+        "page_number": 19,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "eign contribution deposited in any bank referred \nto in sub-section (1) of section 17 or any other income derived from the foreign contribution or \ninterest thereon shall also be deemed to be foreign contribution within the meaning of this clause. \nExplanation 3.\u2014Any amount received, by any person from any foreign source in India, by way \nof fee (including fees charged by an educational institution in India from foreign student) or towards \ncost in lieu of goods or services rendered by such pers",
+        "page_number": 7,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "No. A person who is registered and granted a certificate or has obtained prior permission under this Act, and receives any foreign contribution, shall not transfer such foreign contribution to any other person [1].",
+    "citations": [
+      {
+        "chunk_id": "2a51a9cf-4fc8-48ff-8211-89050da5ee4b",
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd",
+        "page_number": 12,
+        "similarity_score": 0.662229
+      }
+    ],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2986,
+      "top_k": 5
+    },
+    "latency": 3.0614137649536133,
+    "status": "success"
+  },
+  {
+    "id": "q7",
+    "question": "How long is a certificate of registration valid for?",
+    "answerable": true,
+    "expected_pages": [
+      17
+    ],
+    "expected_keywords": [
+      "valid for a period of five years",
+      "certificate of registration"
+    ],
+    "retrieved_chunks": [
+      {
+        "text": " Government in such \nform and manner and accompanied by such fee as may be prescribed. \n(3) The Central Government shall renew the certificate, ordinarily within ninety days from the date of \nreceipt of application for renewal of certificate subject to such terms and conditions as it may deem fit and \ngrant a certificate of renewal for a period of five years: \nProvided that in case the Central Government does not renew the certificate within the said period of \nninety days, it shall communicate ",
+        "page_number": 17,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "ranted a certificate under section 12 \nshall have such certificate renewed within six months before the expiry of the period of the certificate. \n3[Provided that the Central Government may, before renewing the certificate, make such inquiry, as it \ndeems fit, to satisfy itself that such person has fulfilled all conditions specified in sub-section (4) of \nsection 12.] \n(2) The application for renewal of the certificate shall be made to the Central Government in such \nform and manner and accompani",
+        "page_number": 17,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "17 \n \n(3) Any person whose certificate has been cancelled under this section shall not be eligible for \nregistration or grant of prior permission for a period of three years from the date of cancellation of such \ncertificate. \n1[14A. Surrender of certificate.\u2014On a request being made in this behalf, the Central Government \nmay permit any person to surrender the certificate granted under this Act, if, after making such inquiry as \nit deems fit, it is satisfied that such person has not contravened ",
+        "page_number": 17,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "said period of \nninety days, it shall communicate the reasons therefor to the applicant: \nProvided further that the Central Government may refuse to renew the certificate in case where a \nperson has violated any of the provisions of this Act or rules made thereunder. \nCHAPTER IV \nACCOUNTS, INTIMATION, AUDIT AND DISPOSAL OF ASSETS, ETC. \n4[17. Foreign contribution through scheduled bank.\u2014(1) Every person who has been granted \ncertificate or prior permission under section 12 shall receive foreign ",
+        "page_number": 17,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "ld for the benefit of the society for two consecutive years or has become defunct. \n(2) No order of cancellation of certificate under this section shall be made unless the person \nconcerned has been given a reasonable opportunity of being heard. \n \n1. Ins. by Act 33 of 2020, s. 7 (w.e.f. 29-9-2020). \n2. Subs. by s. 8, ibid., for \u201cfor such period not exceeding one hundred and eighty days as may be specified\u201d (w.e.f. 29-9-2020).",
+        "page_number": 16,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "Based on the context, a certificate of registration renewal is granted for a period of five years [1].",
+    "citations": [
+      {
+        "chunk_id": "ba994f62-abc0-4909-915b-10bfd54b7e9d",
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd",
+        "page_number": 17,
+        "similarity_score": 0.601761
+      }
+    ],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2919,
+      "top_k": 5
+    },
+    "latency": 2.473872423171997,
+    "status": "success"
+  },
+  {
+    "id": "q8",
+    "question": "Does the Act apply to citizens of India outside India?",
+    "answerable": true,
+    "expected_pages": [
+      1,
+      6
+    ],
+    "expected_keywords": [
+      "citizens of India outside India",
+      "extent and application"
+    ],
+    "retrieved_chunks": [
+      {
+        "text": "ewith or incidental thereto. \nBE it enacted by Parliament in the Sixty-first Year of the Republic of India as follows:\u2014 \nCHAPTER I  \nPRELIMINARY \n1. Short title, extent, application and commencement.\u2014(1) This Act may be called the Foreign \nContribution (Regulation) Act, 2010. \n(2) It extends to the whole of India, and it shall also apply to\u2014 \n(a) citizens of India outside India; and \n(b) associate branches or subsidiaries, outside India, of companies or bodies corporate, registered \nor incorpora",
+        "page_number": 6,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "f this Act and may, as often as may be necessary, revoke or modify such order. \n51. Act not to apply to certain Government transactions.\u2014Nothing contained in this Act shall \napply to any transaction between the Government of India and the Government of any foreign country or \nterritory. \n52. Application of other laws not barred.\u2014The provisions of this Act shall be in addition to, and \nnot in derogation of, the provisions of any other law for the time being in force. \n53. Power to remove difficul",
+        "page_number": 26,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " this Act, unless the context otherwise requires,\u2014 \n(a) \u201cassociation\u201d means an association of individuals, whether incorporated or not, having an \noffice in India and includes a society, whether registered under the Societies Registration Act, 1860 \n(21 of 1860), or not, and any other organisation, by whatever name called; \n(b) \u201cauthorised person in foreign exchange\u201d means an authorised person referred to in clause (c) \nof section 2 of the Foreign Exchange Management Act, 1999 (42 of 1999); \n(c)",
+        "page_number": 6,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "9 \n \n(iii) an association; \n(iv) a company registered under section 25 of the Companies Act, 1956 (1 of 1956); \n(n) \u201cpolitical party\u201d means\u2014 \n(i) an association or body of individual citizens of India\u2014 \n(A) to be registered with the Election Commission of India as a political party under \nsection 29A of the Representation of the People Act, 1951 (43 of 1951); or \n(B) which has set up candidates for election to any Legislature, but is not so registered or \ndeemed to be registered under the Electi",
+        "page_number": 9,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "and shall not be \ndisclosed except for the purposes of this Act.",
+        "page_number": 18,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "Yes. The Act extends to the whole of India and also applies to citizens of India outside India [1].",
+    "citations": [
+      {
+        "chunk_id": "6446a809-d7a6-439b-a077-57607c484cf7",
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd",
+        "page_number": 6,
+        "similarity_score": 0.578913
+      }
+    ],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2553,
+      "top_k": 5
+    },
+    "latency": 2.952160358428955,
+    "status": "success"
+  },
+  {
+    "id": "q9",
+    "question": "What is the restriction on administrative expenses from foreign contribution?",
+    "answerable": true,
+    "expected_pages": [
+      12,
+      25
+    ],
+    "expected_keywords": [
+      "administrative expenses",
+      "fifty per cent",
+      "twenty per cent",
+      "defray"
+    ],
+    "retrieved_chunks": [
+      {
+        "text": "penses and the manner in which the administrative expenses referred to in sub-section (1) shall be \ncalculated. \n9. Power of Central Government to prohibit receipt of foreign contribution, etc., in certain \ncases.\u2014The Central Government may\u2014 \n(a) prohibit any person or organisation not specified in section 3, from accepting any foreign \ncontribution; \n(b) require any person or class of persons, not specified in section 6, to obtain prior permission of \nthe Central Government before accepting any",
+        "page_number": 12,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "on (1) of section 5; \n(e) the activities or business which shall be construed as speculative business under the proviso to \nclause (a) of sub-section (1) of section 8; \n(f) the elements and the manner in which the administrative expenses shall be calculated under \nsub-section (2) of section 8; \n(g) the time within which and the manner in which any person or class of persons or an \nassociation may be required to furnish intimation regarding the amount of foreign contribution \nreceived under claus",
+        "page_number": 25,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "in lieu of goods or services rendered by such person in the ordinary course of his business, trade \nor commerce whether within India or outside India or any contribution received from an agent of a \nforeign source towards such fee or cost shall be excluded from the definition of foreign contribution \nwithin the meaning of this clause; \n(i) \u201cforeign hospitality\u201d means any offer, not being a purely casual one, made in cash or kind by a \nforeign source for providing a person with the costs of trave",
+        "page_number": 7,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "ived or, as the case may be, any additional foreign contribution, without prior \napproval of the Central Government: \nProvided further that if the person referred to in sub-section (1) or in this sub-section has been found \nguilty] of violation of any of the provisions of this Act or the Foreign Contribution (Regulation) Act, \n1976 (49 of 1976), the unutilised or unreceived amount of foreign contribution shall not be utilised or \nreceived, as the case may be, without the prior approval of the Ce",
+        "page_number": 14,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "eign contribution deposited in any bank referred \nto in sub-section (1) of section 17 or any other income derived from the foreign contribution or \ninterest thereon shall also be deemed to be foreign contribution within the meaning of this clause. \nExplanation 3.\u2014Any amount received, by any person from any foreign source in India, by way \nof fee (including fees charged by an educational institution in India from foreign student) or towards \ncost in lieu of goods or services rendered by such pers",
+        "page_number": 7,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "The provided documents do not contain enough information to answer this question.\n\nThe context mentions that the \"elements and manner in which administrative expenses shall be calculated\" are to be prescribed [1][2], but does not specify the actual restriction (e.g., a percentage limit) on administrative expenses from foreign contribution.",
+    "citations": [
+      {
+        "chunk_id": "523065a5-6bb8-4229-8fa9-68629c1bc52e",
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd",
+        "page_number": 12,
+        "similarity_score": 0.67582
+      },
+      {
+        "chunk_id": "84222b80-951b-4e9b-813e-14e88172b395",
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd",
+        "page_number": 25,
+        "similarity_score": 0.592571
+      }
+    ],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2991,
+      "top_k": 5
+    },
+    "latency": 3.7827162742614746,
+    "status": "success"
+  },
+  {
+    "id": "q10",
+    "question": "When can a person whose certificate has been cancelled apply again for registration?",
+    "answerable": true,
+    "expected_pages": [
+      17
+    ],
+    "expected_keywords": [
+      "certificate has been cancelled",
+      "three years"
+    ],
+    "retrieved_chunks": [
+      {
+        "text": "17 \n \n(3) Any person whose certificate has been cancelled under this section shall not be eligible for \nregistration or grant of prior permission for a period of three years from the date of cancellation of such \ncertificate. \n1[14A. Surrender of certificate.\u2014On a request being made in this behalf, the Central Government \nmay permit any person to surrender the certificate granted under this Act, if, after making such inquiry as \nit deems fit, it is satisfied that such person has not contravened ",
+        "page_number": 17,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "ranted a certificate under section 12 \nshall have such certificate renewed within six months before the expiry of the period of the certificate. \n3[Provided that the Central Government may, before renewing the certificate, make such inquiry, as it \ndeems fit, to satisfy itself that such person has fulfilled all conditions specified in sub-section (4) of \nsection 12.] \n(2) The application for renewal of the certificate shall be made to the Central Government in such \nform and manner and accompani",
+        "page_number": 17,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " Government in such \nform and manner and accompanied by such fee as may be prescribed. \n(3) The Central Government shall renew the certificate, ordinarily within ninety days from the date of \nreceipt of application for renewal of certificate subject to such terms and conditions as it may deem fit and \ngrant a certificate of renewal for a period of five years: \nProvided that in case the Central Government does not renew the certificate within the said period of \nninety days, it shall communicate ",
+        "page_number": 17,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "] \n13. Suspension of certificate.\u2014(1) Where the Central Government, for reasons to be recorded in \nwriting, is satisfied that pending consideration of the question of cancelling the certificate on any of the \ngrounds mentioned in sub-section (1) of section 14, it is necessary so to do, it may, by order in writing, \nsuspend the certificate 2[for a period of one hundred and eighty days, or such further period, not \nexceeding one hundred and eighty days, as may be specified] in the order. \n(2) Ever",
+        "page_number": 16,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "ld for the benefit of the society for two consecutive years or has become defunct. \n(2) No order of cancellation of certificate under this section shall be made unless the person \nconcerned has been given a reasonable opportunity of being heard. \n \n1. Ins. by Act 33 of 2020, s. 7 (w.e.f. 29-9-2020). \n2. Subs. by s. 8, ibid., for \u201cfor such period not exceeding one hundred and eighty days as may be specified\u201d (w.e.f. 29-9-2020).",
+        "page_number": 16,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "A person whose certificate has been cancelled under this section is not eligible for registration or grant of prior permission for a period of three years from the date of cancellation of such certificate [1].",
+    "citations": [
+      {
+        "chunk_id": "60a3320b-994a-41df-83bd-dcc27353650c",
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd",
+        "page_number": 17,
+        "similarity_score": 0.774736
+      }
+    ],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2920,
+      "top_k": 5
+    },
+    "latency": 3.0552549362182617,
+    "status": "success"
+  },
+  {
+    "id": "q11",
+    "question": "What is the recipe for baking a chocolate cake?",
+    "answerable": false,
+    "expected_pages": [],
+    "expected_keywords": [],
+    "retrieved_chunks": [
+      {
+        "text": "ions. \nSch. \n \n. \n. \n. \n. \n.  \n,, \n    Schedule. \nSubs. \n \n. \n. \n. \n. \n.  \n,, \n    Substituted. \nw.e.f.  \n. \n. \n. \n. \n.  \n,, \n    with effect from.",
+        "page_number": 2,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " the ordinary course \nof business transacted by him outside India; or \n \n1. Explanation subs. by Act 33 of 2020, s. 2 (w.e.f. 29-9-2020).",
+        "page_number": 10,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "quired to be, or may be, prescribed. \n49. Orders and rules to be laid before Parliament.\u2014Every order made under section 5 and every \nrule made by the Central Government under this Act shall be laid, as soon as may be after it is made, \nbefore each House of Parliament while it is in session for a total period of thirty days which may be \ncomprised in one session or in two or more successive sessions, and if, before the expiry of the session \nimmediately following the session or the successive ses",
+        "page_number": 26,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " Government. \n12. Grant of certificate of registration. \n12A. Power of Central Government to require Aadhaar number, etc., as identification document. \n13. Suspension of certificate. \n14. Cancellation of certificate. \n14A. Surrender of certificate. \n15. Management of foreign contribution of person whose certificate has been cancelled or \nsurrendered. \n16. Renewal of certificate. \n \nCHAPTER IV \nACCOUNTS, INTIMATION, AUDIT AND DISPOSAL OF ASSETS, ETC. \n17. Foreign contribution through scheduled ba",
+        "page_number": 3,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "-9-2020).",
+        "page_number": 14,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "The provided documents do not contain enough information to answer this question.",
+    "citations": [],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 1782,
+      "top_k": 5
+    },
+    "latency": 2.534043550491333,
+    "status": "success"
+  },
+  {
+    "id": "q12",
+    "question": "How many goals did Lionel Messi score in the 2022 World Cup?",
+    "answerable": false,
+    "expected_pages": [],
+    "expected_keywords": [],
+    "retrieved_chunks": [
+      {
+        "text": "permission under section 12 shall receive foreign contribution only in an account \ndesignated as \"FCRA Account\" by the bank, which shall be opened by him for the purpose of remittances \n \n1. Ins. by Act 33 of 2020, s. 9 (w.e.f. 29-9-2020). \n2. Ins. by s. 10, ibid. (w.e.f. 29-9-2020). \n3. The proviso ins. by s. 11, ibid. (w.e.f 29-9-2020). \n4. Subs. by s. 12, ibid., for s. 17 (w.e.f. 29-9-2020).",
+        "page_number": 17,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "-9-2020).",
+        "page_number": 14,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "26 \n \n(r) the prescribed amount of foreign remittance, the form and manner in which the foreign \nremittance received by every bank or authorised person in foreign exchange shall be reported under \nsub-section (2) of section 17; \n(s) the time within which and the manner in which the person who has been granted certificate of \nregistration or given prior permission under this Act shall give intimation under section 18; \n(t) the form and manner in which account of any foreign contribution and the m",
+        "page_number": 26,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "TC. \n17. Foreign contribution through scheduled bank. \n18. Intimation. \n19. Maintenance of accounts. \n20. Audit of accounts. \n21. Intimation by candidate for election. \n22. Disposal of assets created out of foreign contribution.",
+        "page_number": 3,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " manner in which \nsuch foreign contribution was utilised; \n \n1. Subs. by Act 33 of 2020, s. 3, for s. 7 (w.e.f. 29-9-2020). \n2. Subs. by s. 4, ibid., for \u201cfifty per cent.\u201d (w.e.f. 29-9-2020).",
+        "page_number": 12,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "The provided documents do not contain enough information to answer this question.",
+    "citations": [],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 1816,
+      "top_k": 5
+    },
+    "latency": 3.0058705806732178,
+    "status": "success"
+  },
+  {
+    "id": "q13",
+    "question": "What is the minimum capital requirement to start a domestic bank in India?",
+    "answerable": false,
+    "expected_pages": [],
+    "expected_keywords": [],
+    "retrieved_chunks": [
+      {
+        "text": "18 \n \nof foreign contribution in such branch of the State Bank of India at New Delhi, as the Central \nGovernment may, by notification, specify in this behalf: \nProvided that such person may also open another \u201cFCRA Account\u201d in any of the scheduled bank of \nhis choice for the purpose of keeping or utilising the foreign contribution which has been received from \nhis \u201cFCRA Account\u201d in the specified branch of State Bank of India at New Delhi: \nProvided further that such person may also open one or mo",
+        "page_number": 18,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "d further that such person may also open one or more accounts in one or more scheduled \nbanks of his choice to which he may transfer for utilising any foreign contribution received by him in his \n\u201cFCRA Account\u201d in the specified branch of the State Bank of India at New Delhi or kept by him in \nanother \u201cFCRA Account\u201d in a scheduled bank of his choice: \nProvided also that no funds other than foreign contribution shall be received or deposited in any such \naccount. \n(2) The specified branch of the S",
+        "page_number": 18,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " such \naccount. \n(2) The specified branch of the State Bank of India at New Delhi or the branch of the scheduled bank \nwhere the person referred to in sub-section (1) has opened his foreign contribution account or the \nauthorised person in foreign exchange, shall report to such authority as may be specified,\u2014 \n(a) the prescribed amount of foreign remittance; \n(b) the source and manner in which the foreign remittance was received; and \n(c) other particulars,  \nin such form and manner as may be pr",
+        "page_number": 18,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "hall be made to the Central Government in such form \nand manner and along with such fee, as may be prescribed. \n2[(1A) Every person who makes an application under sub-section (1) shall be required to open \u201cFCRA \nAccount\u201d in the manner specified in section 17 and mention details of such account in his application.] \n(2) On receipt of an application under sub-section (1), the Central Government shall, by an order, if \nthe application is not in the prescribed form or does not contain any of the par",
+        "page_number": 14,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "0 of 1963); \n(D) Legislative Assembly for the National Capital Territory of Delhi referred to in the \nGovernment of National Capital Territory of Delhi Act, 1991 (1 of 1992); \n(E) Municipality as defined in clause (e) of article 243P of the Constitution; \n(F) District Councils and Regional Councils in the States of Assam, Meghalaya, Tripura and \nMizoram as provided in the Sixth Schedule to the Constitution; \n(G) Panchayat as defined in clause (d) of article 243 of the Constitution; or \n(H) any o",
+        "page_number": 8,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "The provided documents do not contain enough information to answer this question.",
+    "citations": [],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2991,
+      "top_k": 5
+    },
+    "latency": 2.5565996170043945,
+    "status": "success"
+  },
+  {
+    "id": "q14",
+    "question": "How do you perform a successful heart transplant surgery?",
+    "answerable": false,
+    "expected_pages": [],
+    "expected_keywords": [],
+    "retrieved_chunks": [
+      {
+        "text": " any such permission for an emergent medical aid \nneeded on account of sudden illness contracted during a visit outside India, but, where such foreign \nhospitality has been received, the person receiving such hospitality shall give, within one month from the \ndate of receipt of such hospitality an intimation to the Central Government as to the receipt of such \nhospitality, and the source from which, and the manner in which, such hospitality was received by him. \n1[7. Prohibition to transfer fore",
+        "page_number": 12,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "12 \n \n6. Restriction on acceptance of foreign hospitality.\u2014No member of a Legislature or office-bearer \nof a political party or Judge or Government servant or employee of any corporation or any other body \nowned or controlled by the Government shall, while visiting any country or territory outside India, accept, \nexcept with the prior permission of the Central Government, any foreign hospitality: \nProvided that it shall not be necessary to obtain any such permission for an emergent medical aid \n",
+        "page_number": 12,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "1), register such person and grant him a certificate or give him prior permission, as the \ncase may be, subject to such terms and conditions as may be prescribed: \nProvided that in case the Central Government does not grant, within the said period of ninety days, a \ncertificate or give prior permission, it shall communicate the reasons therefor to the applicant: \nProvided further that a person shall not be eligible for grant of certificate or giving prior permission, \nif his certificate has been",
+        "page_number": 14,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "efusing to give permission under this Act, or by any order made \nby the Central Government under sub-section (2) or sub-section (4) of section 12, or sub-section (1) of \nsection 14, as the case may be, may, within sixty days from the date of such order, prefer an appeal \nagainst such order to the High Court within the local limits of whose jurisdiction the appellant ordinarily \nresides or carries on business or personally works for gain, or, where the appellant is an organisation or \nassociation",
+        "page_number": 21,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "17 \n \n(3) Any person whose certificate has been cancelled under this section shall not be eligible for \nregistration or grant of prior permission for a period of three years from the date of cancellation of such \ncertificate. \n1[14A. Surrender of certificate.\u2014On a request being made in this behalf, the Central Government \nmay permit any person to surrender the certificate granted under this Act, if, after making such inquiry as \nit deems fit, it is satisfied that such person has not contravened ",
+        "page_number": 17,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "The provided documents do not contain enough information to answer this question.",
+    "citations": [],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2989,
+      "top_k": 5
+    },
+    "latency": 2.7012884616851807,
+    "status": "success"
+  },
+  {
+    "id": "q15",
+    "question": "What are the rules for investing in cryptocurrency under FEMA?",
+    "answerable": false,
+    "expected_pages": [],
+    "expected_keywords": [],
+    "retrieved_chunks": [
+      {
+        "text": "n so prohibited in the prescribed manner, and \nthereupon the provisions of sub-sections (2), (3), (4) and (5) of section 7 of the Unlawful Activities \n(Prevention) Act, 1967 (37 of 1967) shall, so far as may be, apply to, or in relation to, such article or \ncurrency or security and references in the said sub-sections to moneys, securities or credits shall be \nconstrued as references to such article or currency or security. \nCHAPTER III \nREGISTRATION \n11. Registration of certain persons with Cent",
+        "page_number": 13,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "prior permission under this Act and receives any foreign \ncontribution,\u2014 \n(a) shall utilise such contribution for the purposes for which the contribution has been received: \nProvided that any foreign contribution or any income arising out of it shall not be used for \nspeculative business: \nProvided further that the Central Government shall, by rules, specify the activities or business \nwhich shall be construed as speculative business for the purpose of this section; \n(b) shall not defray as far ",
+        "page_number": 12,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": "hall be made to the Central Government in such form \nand manner and along with such fee, as may be prescribed. \n2[(1A) Every person who makes an application under sub-section (1) shall be required to open \u201cFCRA \nAccount\u201d in the manner specified in section 17 and mention details of such account in his application.] \n(2) On receipt of an application under sub-section (1), the Central Government shall, by an order, if \nthe application is not in the prescribed form or does not contain any of the par",
+        "page_number": 14,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " for his personal use, if the \nmarket value, in India, of such article, on the date of such gift, is not more than such sum as may \nbe specified from time to time, by the Central Government by the rules made by it in this behalf; \n(ii) of any currency, whether Indian or foreign; \n(iii) of any security as defined in clause (h) of section 2 of the Securities Contracts \n(Regulation) Act, 1956 (42 of 1956) and includes any foreign security as defined in clause (o) of \nsection 2 of` the Foreign Excha",
+        "page_number": 7,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      },
+      {
+        "text": " currency or security, whether Indian or foreign, which has been accepted \nby such person in contravention of any of the provisions of this Act, it may, by order in writing, prohibit \nsuch person from paying, delivering, transferring or otherwise dealing with, in any manner whatsoever, \nsuch article or currency or security save in accordance with the written orders of the Central Government \nand a copy of such order shall be served upon the person so prohibited in the prescribed manner, and \nthe",
+        "page_number": 13,
+        "source_id": "f440d9e4-5e2e-4c2b-b1d3-749b502c51dd",
+        "document_id": "0cd4735e-3895-4383-bcad-c6aefd3594fd"
+      }
+    ],
+    "generated_answer": "The provided documents do not contain enough information to answer this question.",
+    "citations": [],
+    "rag_metadata": {
+      "model": "claude-sonnet-5",
+      "chunks_retrieved": 5,
+      "context_chars": 2989,
+      "top_k": 5
+    },
+    "latency": 3.871968984603882,
+    "status": "success"
+  }
+]
