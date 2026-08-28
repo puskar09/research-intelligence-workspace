@@ -10,6 +10,7 @@ from backend.services.llm_service import BaseLLMService, LLMServiceError
 from backend.services.retrieval_service import RetrievalResult, RetrievalService
 from backend.services.source_ranker import SourceRanker
 from backend.services.web_research_service import WebResearchService
+from backend.services.embedding_service import embed_texts
 
 logger = logging.getLogger(__name__)
 
@@ -189,17 +190,27 @@ class ResearchService:
 
         all_chunks: dict[str, RetrievalResult] = {}
         
+        web_chunks = []
+        web_chunk_vectors = None
+        if web_search:
+            # Perform web search ONCE for the main query
+            web_chunks = self._web_research.get_web_chunks(query=question, max_urls=3)
+            # Cap to 100 chunks before embedding
+            if len(web_chunks) > 100:
+                web_chunks = web_chunks[:100]
+            # Embed all web chunks ONCE
+            web_chunk_texts = [wc.text for wc in web_chunks]
+            if web_chunk_texts:
+                web_chunk_vectors = embed_texts(web_chunk_texts)
+        
         for sq in sub_questions:
             local_chunks = self._retrieval.search(db=db, query=sq, top_k=3)
-            
-            web_chunks = []
-            if web_search:
-                web_chunks = self._web_research.get_web_chunks(query=sq, max_urls=2)
                 
             ranked = self._source_ranker.rank(
                 query=sq,
                 local_results=local_chunks,
                 web_chunks=web_chunks,
+                web_chunk_vectors=web_chunk_vectors,
                 top_k=3
             )
             

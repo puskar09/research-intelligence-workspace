@@ -24,6 +24,7 @@ class SourceRanker:
         query: str,
         local_results: List[RetrievalResult],
         web_chunks: List[WebChunk],
+        web_chunk_vectors: List[List[float]] = None,
         top_k: int = 3
     ) -> List[RetrievalResult]:
         
@@ -34,16 +35,20 @@ class SourceRanker:
 
         if web_chunks:
             # Cap the number of web chunks to rank to avoid extreme payloads
-            if len(web_chunks) > 100:
+            if not web_chunk_vectors and len(web_chunks) > 100:
                 logger.info("SourceRanker: truncating %d web chunks to 100", len(web_chunks))
                 web_chunks = web_chunks[:100]
 
             # Embed the query to compare with web chunks
             query_vector = embed_text(query)
 
-            # Batched embedding of all web chunks
-            chunk_texts = [wchunk.text for wchunk in web_chunks]
-            w_vecs = embed_texts(chunk_texts)
+            if web_chunk_vectors and len(web_chunk_vectors) == len(web_chunks):
+                w_vecs = web_chunk_vectors
+            else:
+                # Batched embedding of all web chunks
+                chunk_texts = [wchunk.text for wchunk in web_chunks]
+                w_vecs = embed_texts(chunk_texts)
+
 
             # Compute distances
             for wchunk, w_vec in zip(web_chunks, w_vecs):
