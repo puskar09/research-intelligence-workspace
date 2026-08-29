@@ -25,7 +25,8 @@ class SourceRanker:
         local_results: List[RetrievalResult],
         web_chunks: List[WebChunk],
         web_chunk_vectors: List[List[float]] = None,
-        top_k: int = 3
+        top_k: int = 3,
+        query_vector: List[float] = None
     ) -> List[RetrievalResult]:
         
         if not local_results and not web_chunks:
@@ -43,7 +44,8 @@ class SourceRanker:
                 web_chunks = web_chunks[:100]
 
             # Embed the query to compare with web chunks
-            query_vector = embed_text(query)
+            if query_vector is None:
+                query_vector = embed_text(query)
 
             if web_chunk_vectors and len(web_chunk_vectors) == len(web_chunks):
                 w_vecs = web_chunk_vectors

@@ -195,23 +195,44 @@ class ResearchService:
         if web_search:
             # Perform web search ONCE for the main query
             web_chunks = self._web_research.get_web_chunks(query=question, max_urls=3)
-            # Cap to 100 chunks before embedding
-            if len(web_chunks) > 100:
-                web_chunks = web_chunks[:100]
+            # Cap to 30 chunks to avoid excessive memory usage when embedding
+            if len(web_chunks) > 30:
+                web_chunks = web_chunks[:30]
             # Embed all web chunks ONCE
             web_chunk_texts = [wc.text for wc in web_chunks]
             if web_chunk_texts:
                 web_chunk_vectors = embed_texts(web_chunk_texts)
         
+        # Fast path to avoid querying DB if no local sources exist
+        from sqlalchemy import text
+        has_local_sources = False
+        try:
+            has_local_sources = db.execute(text("SELECT 1 FROM chunks LIMIT 1")).fetchone() is not None
+        except Exception:
+            has_local_sources = True  # fallback to querying if check fails
+            
         for sq in sub_questions:
-            local_chunks = self._retrieval.search(db=db, query=sq, top_k=3)
+            # Embed the sub-question ONCE and pass to both retrieval and ranker
+            from backend.services.embedding_service import embed_text
+            sq_vector = embed_text(sq)
+            
+            if has_local_sources:
+                local_chunks = self._retrieval.search(
+                    db=db, 
+                    query=sq, 
+                    top_k=3,
+                    query_vector=sq_vector
+                )
+            else:
+                local_chunks = []
                 
             ranked = self._source_ranker.rank(
                 query=sq,
                 local_results=local_chunks,
                 web_chunks=web_chunks,
                 web_chunk_vectors=web_chunk_vectors,
-                top_k=3
+                top_k=3,
+                query_vector=sq_vector
             )
             
             for c in ranked:

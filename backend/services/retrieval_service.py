@@ -49,6 +49,7 @@ class RetrievalService:
         db: Session,
         query: str,
         top_k: int = 5,
+        query_vector: list[float] | None = None,
     ) -> list[RetrievalResult]:
         """
         Embed the query and return the top_k most similar chunks.
@@ -67,8 +68,9 @@ class RetrievalService:
         """
         if not query.strip():
             return []
-
-        query_vector = embed_text(query)
+        
+        if query_vector is None:
+            query_vector = embed_text(query)
 
         # pgvector cosine distance operator: <=>
         # Cast the Python list to a pgvector literal so psycopg2 sends it correctly.
