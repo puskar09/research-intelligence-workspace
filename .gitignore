@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Workspace secrets and generated directories
+.env.*
+!.env.example
+node_modules
+.next
+.vercel
