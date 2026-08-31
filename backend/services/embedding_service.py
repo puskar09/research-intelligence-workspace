@@ -57,7 +57,7 @@ def embed_text(text: str) -> list[float]:
     return vector.tolist()
 
 
-def embed_texts(texts: list[str], batch_size: int = 64) -> list[list[float]]:
+def embed_texts(texts: list[str], batch_size: int = 8) -> list[list[float]]:
     """
     Embed a list of strings, processing them in batches.
 
@@ -99,7 +99,7 @@ class EmbeddingService:
         return embed_text(text)
 
     @staticmethod
-    def embed_texts(texts: list[str], batch_size: int = 64) -> list[list[float]]:
+    def embed_texts(texts: list[str], batch_size: int = 8) -> list[list[float]]:
         """Embed a list of strings in batches. Returns list[list[float]]."""
         return embed_texts(texts, batch_size=batch_size)
 
