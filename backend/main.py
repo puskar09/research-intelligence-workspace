@@ -66,4 +66,6 @@ app.include_router(research_router, prefix="/api/research", tags=["research"])
 # --- Health ---
 @app.get("/health", tags=["health"], summary="Health check")
 def health_check() -> dict[str, str]:
-    return {"status": "ok"}
+    return{"status":"ok"}
+    
+    

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { RAGQueryResponse, ResearchQueryResponse, SourceRef, askQuestion, ResearchDiscoveryResponse, runResearchDiscovery, runResearch } from '@/lib/api';
-import { runResearchFixture, runResearchDiscoveryFixture, fixtureChunkCache } from '@/lib/fixtures';
+
 import ResearchInput from './ResearchInput';
 import AskView from './AskView';
 import ResearchBrief from './ResearchBrief';
@@ -172,7 +172,7 @@ export default function ResearchWorkspace({ chunkCache }: { chunkCache?: Record<
       {/* Evidence Panel Overlays */}
       <EvidencePanel 
         sourceRef={selectedSource} 
-        chunkText={selectedSource ? ((chunkCache && chunkCache[selectedSource.chunk_id]) || fixtureChunkCache[selectedSource.chunk_id]) : undefined}
+        chunkText={selectedSource ? (chunkCache && chunkCache[selectedSource.chunk_id]) : undefined}
         onClose={() => setSelectedSource(null)} 
       />
 
