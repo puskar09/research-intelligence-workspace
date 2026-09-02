@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Required for the multi-stage Docker build (Dockerfile copies .next/standalone).
-  output: 'standalone',
+
 
   experimental: {
     proxyTimeout: 120000,
