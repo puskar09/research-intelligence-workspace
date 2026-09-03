@@ -12,7 +12,10 @@ const nextConfig: NextConfig = {
     // In production (Railway), set BACKEND_API_URL as a build-time environment variable
     // on the frontend service, e.g. https://your-backend.up.railway.app/api
     // The compiled destination is baked into .next/routes-manifest.json.
-    const backendUrl = process.env.BACKEND_API_URL || 'http://127.0.0.1:8001/api';
+    const defaultBackendUrl = process.env.NODE_ENV === 'production' 
+      ? 'https://research-intelligence-workspace-production.up.railway.app/api' 
+      : 'http://127.0.0.1:8001/api';
+    const backendUrl = (process.env.BACKEND_API_URL || defaultBackendUrl).replace(/\/$/, '');
     return [
       {
         source: '/api/backend/:path*',
