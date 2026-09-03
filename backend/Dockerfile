@@ -13,6 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the backend directory
 COPY backend/ ./backend/
 
-EXPOSE 8001
+EXPOSE 8080
 
-CMD sh -c "uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-8001}"
+CMD sh -c "uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-8080} --timeout-keep-alive 75"

@@ -32,11 +32,16 @@ logger = logging.getLogger(__name__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    import asyncio
+
     logger.info("Starting up -- initialising database...")
     init_db()
 
-    # Verify the live model dimension matches the DB schema.
-    live_dim = embedding_dimension()
+    # Load and verify the embedding model in a thread so the event loop (and
+    # therefore the /health endpoint) stays responsive during the potentially
+    # slow first-time model download/load from HuggingFace cache.
+    loop = asyncio.get_event_loop()
+    live_dim = await loop.run_in_executor(None, embedding_dimension)
     if live_dim != EMBEDDING_DIM:
         raise RuntimeError(
             f"Embedding model dimension mismatch: model={live_dim}, "
@@ -47,6 +52,7 @@ async def lifespan(app: FastAPI):
     logger.info("Database ready.")
     yield
     logger.info("Shutting down.")
+
 
 
 app = FastAPI(
